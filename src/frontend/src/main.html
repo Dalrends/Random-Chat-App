@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../node_modules/socket.io/client-dist/socket.io.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Chat App</title>
+    <link rel="stylesheet" type="text/css" href="mainStyle.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0px;
+        }     
+    </style>
+</head>
+<body>
+    <div class="popup-menu hidden" id="popup-menu">
+        <div class="popup-header"></div>
+        <input type="text" placeholder="Enter report reason">
+        <div class="button-container">
+          <button id="reportButton">Report User</button>
+          <button id="cancelReportButton">Cancel</button>
+        </div>
+      </div>
+    <div class="grid-container">
+        <div class="boxrand item-1">
+            <div class="headbox">
+                <font 
+                size="8em" 
+                color="red">
+                <b>Random Chat App</b>
+                </font>
+            </div>
+        </div>
+        <div class="item-2 boxrand">
+            <form>
+                <div id="randomMessages" class="chatfenster"></div>
+                <div class="inputchatfenster">
+                    <div class="kontrollleiste">
+                        <button id="nextChatButton" class="button2">next</button>
+                        <button class="button2">block</button>
+                        <button id="addFriend" class="button2">add friend</button>
+                    </div>
+                    <input id="randomMessageInput" class="input" type="text" maxlength="500"
+                    placeholder="type your message here">
+                    <button id="randomSendButton" class="button1">Senden</button>
+                </div>
+            </form>
+        </div>
+        <div class="item-4 boxrand">
+            <div class="headbox">
+                <font 
+                size="8em" 
+                color="red">
+                <b>Friendlist</b>
+                </font>
+            </div>
+            <div class="friendlist-container">
+                <ul>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                    <li class="li-style"><font color="red">test freund name</font><button class="friendlistbutton"><b>chat</b></button><button class="friendlistbutton"><b>profile</b></button>
+                  </ul>
+            </div>
+        </div>
+        <div class="item-5 boxrand">
+            <div class="headbox">
+                <font 
+                size="8em" 
+                color="red">
+                <b>
+                <span id="username"></span>
+                </b>
+                </font>
+            </div>
+                <div class="profilecontainer">
+                    <div class="socialcontainertop">
+                        <div class="attributcontainer">
+                            <div><font color="red"><b>Name: Hisoka</b></font></div>
+                                <div><font color="red"><b>Alter: 28</b></font></div>
+                                    <div><font color="red"><b>Wohnort: NA</b></font></div>
+                                        <div><font color="red"><b>Größe: 190cm</b></font></div>
+                                            <div><font color="red"><b>Geschlecht: m</b></font></div>
+                                                <div><font color="red"><b>Beruf: Hunter</b></font></div>
+
+                        </div>
+                        <div class="bildcontainer"><img class="bildanpassung" src="https://images4.alphacoders.com/637/637345.jpg">
+                        </div>
+                    </div>
+                    <div class="socialcontainermiddle">
+                        <div class="middleaufteilung"><font color="red"><b>Hobbys</b></font>
+                            <p>
+                                <li class="li-style"><font color="red"><b>test</b></font></li>
+                                <li class="li-style"><font color="red"><b>test</b></font></li>
+                                <li class="li-style"><font color="red"><b>test</b></font></li>
+                            </p>
+                        </div>
+                        <div class="middleaufteilung"><font color="red"><b>Haustier</b></font>
+                            <p>
+                                <li class="li-style"><font color="red"><b>test</b></font></li>
+                                <li class="li-style"><font color="red"><b>test</b></font></li>
+                                <li class="li-style"><font color="red"><b>test</b></font></li>
+                            </p>
+                        </div>
+                        <div class="middleaufteilung"><font color="red"><b>Serien</b></font>
+                            <p>
+                                <li class="li-style"><font color="red"><b>test</b></font></li>
+                                <li class="li-style"><font color="red"><b>test</b></font></li>
+                                <li class="li-style"><font color="red"><b>test</b></font></li>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="socialcontainerbot">    
+                        <a href="https://youtube.com"><button class="button4">
+                            <i class="fa fa-youtube-square" style="font-size:60px;color:red"></i>
+                        </button></a>
+                        <a href="https://instagram.com"><button class="button4">
+                            <i class="fa fa-instagram" style="font-size:48px;color:red"></i>
+                        </button></a>
+                        <a href="https://github.com"><button class="button4">
+                            <i class="fa fa-github" style="font-size:48px;color:red"></i>
+                        </button></a>
+                        <a href="https://twitter.com"><button class="button4">
+                            <i class="fa fa-twitter-square" style="font-size:48px;color:red"></i>
+                        </button></a>
+                        <a href="https://facebook.com"><button class="button4">
+                            <i class="fa fa-facebook-square" style="font-size:48px;color:red"></i>
+                        </button></a>
+                    </div>
+                </div>
+        </div>
+        
+    </div>
+
+</body>
+<script src="mainClient.js"></script>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ClientTsch.js",
+  "source": "src",
+  "scripts": {
+    "start": "parcel serve src/*.html",
+    "build": "parcel build"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "parcel": "^2.8.3",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1"
+  }
+}

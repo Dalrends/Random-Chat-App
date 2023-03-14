@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.0",
+    "pg": "^8.9.0",
+    "socket.io": "^4.6.1"
+  },
+  "name": "backend",
+  "description": "A serving application",
+  "version": "1.0.0",
+  "main": "ServerTsch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/ServerTsch.js",
+    "type": "module"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jamigeo@github.com/AWS-22-10-Mini-T6/Tsch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AWS-22-10-Mini-T6/Tsch/issues"
+  },
+  "homepage": "https://github.com/AWS-22-10-Mini-T6/Tsch#readme",
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17"
+  }
+}
